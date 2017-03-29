@@ -16,7 +16,7 @@ public class GreatestCommonFactor {
 		return false;
 	}
 	
-	public static int gFC(int a, int b){
+	public static int gCF(int a, int b){
 		int smallNum = Math.min(a, b);
 		int bigNum = Math.max(a, b);
 		
