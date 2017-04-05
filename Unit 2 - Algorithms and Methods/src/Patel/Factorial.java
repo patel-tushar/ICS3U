@@ -1,4 +1,9 @@
 package Patel;
+/**
+ * this program find the factorial of a number
+ * 2017-04-03
+ * @author Tushar Patel
+ */
 
 import java.util.Scanner;
 
@@ -9,8 +14,12 @@ public class Factorial {
 
 	}
 	
+	/*determines the factorial value of a number
+	 * @param is an integer a
+	 * @return is the factorial of a
+	 */
 	public double factorial(int a){
-		if(a == 0){
+		if(a <= 0){
 			return 1;
 		} else if(a < 0) {
 			return -1;
