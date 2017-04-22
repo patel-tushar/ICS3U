@@ -52,7 +52,7 @@ public class Main {
 	public static void main(String[] args) {
 		c.setTextBackgroundColour(Color.BLACK);
 		c.setTextColor(Color.RED);
-		
+		c.setBackground(Color.BLACK);
 		c.drawImage(timeMachine, 0, 100, 900, 650, null);
 		c.println("Welcome to Battle Against Time. Choice will be given to you and you must choose from one of the choice in bracket. Please press enter twice to start.");
 		c.readLine();
@@ -393,6 +393,7 @@ public class Main {
 
 	public static boolean end(String outputLine) {
 		c.setTextBackgroundColour(Color.RED);
+		c.setBackground(Color.BLACK);
 		c.setTextColor(Color.BLACK);
 		c.println(outputLine);
 		c.println("Press enter twice to continue");
@@ -411,6 +412,7 @@ public class Main {
 	//this method outputs, takes in an input and sees if its valid, and also outputs an image
 	public static String inputOutput(String output, String optionA, String optionB, BufferedImage pic) {
 		c.clear();
+		c.setBackground(Color.BLACK);
 		c.drawImage(pic, 0, 100, 750, 500, null);
 		c.println(output);
 		String input = "";
