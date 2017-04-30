@@ -43,7 +43,7 @@ public class TheGameIOfLife {
 				}
 				System.out.println("");
 			}
-			
+			today = changeDay(today);
 			//cancel out if all cells are dead (basically don't continue)
 			if(areAllCellsDead(today)){
 				System.out.println("All cells are dead");
@@ -86,11 +86,13 @@ public class TheGameIOfLife {
 	 * @return 2D boolean array that represents the next day called "nextDay"
 	 */
 	public static boolean[][] changeDay(boolean[][] lastDay){
-		boolean[][] nextDay = lastDay;
+		boolean[][] nextDay = new boolean[20][20];
 		for(int i = 0; i < 20; i++){
 			for(int j = 0; j < 20; j++){
-				if(nextDay[i][j]){
-					if(!(neighbourCells(lastDay, i, j) == 2 || neighbourCells(lastDay, i, j) == 3)){
+				if(lastDay[i][j]){
+					if(neighbourCells(lastDay, i, j) == 2 || neighbourCells(lastDay, i, j) == 3){
+						nextDay[i][j] = true;
+					} else {
 						nextDay[i][j] = false;
 					}
 				}
@@ -143,28 +145,28 @@ public class TheGameIOfLife {
 		}
 
 		//check top right
-		if(!((y < 19) && (x < 19))){
+		if(((y < 19) && (x < 19))){
 			if(grid[y + 1][x + 1]){
 				total++;
 			}
 		}
 
 		//check bottom left
-		if(!((y > 0) && (x > 0))){
+		if(((y >= 1) && (x >= 1))){
 			if(grid[y - 1][x - 1]){
 				total++;
 			}
 		}
 
 		//check bottom right
-		if(!((y > 0) && (x < 19))){
+		if(((y > 0) && (x < 19))){
 			if(grid[y - 1][x + 1]){
 				total++;
 			}
 		}
 
 		//check top left
-		if(!((y < 19) && (x > 0))){
+		if(((y < 19) && (x > 0))){
 			if(grid[y + 1][x - 1]){
 				total++;
 			}

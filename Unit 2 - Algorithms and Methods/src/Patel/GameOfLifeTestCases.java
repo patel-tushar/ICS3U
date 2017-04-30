@@ -4,6 +4,7 @@ package Patel;
  * This program finds test cases for the game of life program
  * @author Tushar
  * 2017-04-28
+ * to use this program, comment out line 25 in my other program and just copy paste
  */
 public class GameOfLifeTestCases {
 
