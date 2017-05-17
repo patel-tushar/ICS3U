@@ -22,7 +22,7 @@ public class TheGameIOfLife {
 
 		//take in all locations of cells and store them in array
 		for(int i = 0; i < numberOfCells; i++){
-			System.out.println("Input the coordinates seperated by a space");
+			//System.out.println("Input the coordinates seperated by a space");
 			int x = sc.nextInt();
 			int y = sc.nextInt();
 			today[y- 1][x - 1] = true;
