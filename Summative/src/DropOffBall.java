@@ -3,7 +3,7 @@ import lejos.nxt.SensorPort;
 import lejos.nxt.UltrasonicSensor;
 import lejos.robotics.subsumption.Behavior;
 
-//end by droping in cup behaviour
+//end by dropping in cup behavior
 
 public class DropOffBall implements Behavior{
 	private  boolean  suppressed = false;
@@ -14,7 +14,7 @@ public class DropOffBall implements Behavior{
 	}
 	
 	public boolean takeControl(){
-		if(us.getDistance() > 21.4){//when it reaches the cup
+		if(us.getDistance() < 17){//when it reaches the cup
 			return true;
 		}
 		return false;
@@ -26,10 +26,10 @@ public class DropOffBall implements Behavior{
 		Motor.B.stop();
 
 		//open arm
-		Motor.C.rotate(-45, true);
+		Motor.C.rotate(90, true);
 
 		while(!suppressed){
-		Thread.yield();//check for any other behaviours to over rule this one
+		Thread.yield();//check for any other behaviors to over rule this one
 		}
 		
 	}

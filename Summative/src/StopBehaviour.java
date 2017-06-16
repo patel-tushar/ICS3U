@@ -6,10 +6,10 @@ import lejos.robotics.subsumption.Behavior;
 
 public class StopBehaviour implements Behavior{
 
-	private boolean suppressed = false;
+
 	
 	public void suppress(){
-		suppressed = true;
+	
 	}
 	
 	public boolean takeControl(){

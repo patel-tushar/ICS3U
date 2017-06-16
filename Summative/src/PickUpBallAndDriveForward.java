@@ -16,19 +16,14 @@ public class PickUpBallAndDriveForward implements Behavior{
 	}
 	
 	public boolean takeControl(){
-		if(ss.readValue() > 50){//first clap
-	
-			Delay.msDelay(250);//wait a little time for second clap
-			
-			if(ss.readValue() > 50){//second clap
+		if(ss.readValue() > 80){//scream
 			return true;
-			}
 		}
 		return false;
 	}
 	
 	public void action(){     
-		Motor.C.rotate(45, true);//close arm
+		Motor.C.rotate(-90, true);//close arm
 		
 		//drive forward
 		Motor.A.forward();

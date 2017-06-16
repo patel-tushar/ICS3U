@@ -2,8 +2,9 @@ import lejos.nxt.Motor;
 import lejos.nxt.SensorPort;
 import lejos.nxt.SoundSensor;
 import lejos.robotics.subsumption.Behavior;
+import lejos.util.Delay;
 
-//single clap stop and drop ball behaviour
+//single clap stop and drop ball behavior
 
 public class StopAndDrop implements Behavior{
 
@@ -15,7 +16,7 @@ public class StopAndDrop implements Behavior{
 	}
 	
 	public boolean takeControl(){
-		if(noise.readValue() > 50){//if there is a single clap
+		if(noise.readValue() > 30){//if there is a single clap
 			return true;
 		}
 		return false;
@@ -27,11 +28,11 @@ public class StopAndDrop implements Behavior{
 		Motor.B.stop();
 
 		//open arm
-		Motor.C.rotate(-45, true);
+		Motor.C.rotate(90, true);
 
 
 		while(!suppressed){
-		Thread.yield();//check for any other behaviours to over rule this one
+		Thread.yield();//check for any other behaviors to over rule this one
 		}
 	}
 	

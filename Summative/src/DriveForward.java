@@ -1,7 +1,7 @@
 import lejos.nxt.Motor;
 import lejos.robotics.subsumption.Behavior;
 
-//initial action behaviour
+//initial action behavior
 
 public class DriveForward implements Behavior{
 	private boolean suppressed = false;
@@ -15,14 +15,14 @@ public class DriveForward implements Behavior{
 	}
 	
 	public void action(){     
-		Motor.C.rotate(45, true);//close arm
+		Motor.C.rotate(-90, true);//close arm
 		
 		//drive forward
 		Motor.A.forward();
 		Motor.B.forward();
 
 		while(!suppressed){
-		Thread.yield();//check for any other behaviours to over rule this one
+		Thread.yield();//check for any other behaviors to over rule this one
 		}
 		
 		
