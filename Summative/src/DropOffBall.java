@@ -7,7 +7,11 @@ import lejos.robotics.subsumption.Behavior;
 
 public class DropOffBall implements Behavior{
 	private  boolean  suppressed = false;
-	private UltrasonicSensor us = new UltrasonicSensor(SensorPort.S3);
+	private UltrasonicSensor us;
+	
+	public DropOffBall(UltrasonicSensor us){
+		this.us = us;
+	}
 	
 	public void suppress(){
 		suppressed = true;
@@ -29,7 +33,7 @@ public class DropOffBall implements Behavior{
 		Motor.C.rotate(90, true);
 
 		while(!suppressed){
-		Thread.yield();//check for any other behaviors to over rule this one
+			Thread.yield();//check for any other behaviors to over rule this one
 		}
 		
 	}

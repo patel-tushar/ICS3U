@@ -9,7 +9,11 @@ import lejos.util.Delay;
 public class StopAndDrop implements Behavior{
 
 	private  boolean  suppressed = false;
-	private SoundSensor noise = new SoundSensor(SensorPort.S2);
+	private SoundSensor noise;
+	
+	public StopAndDrop (SoundSensor ss){
+		this.noise = ss;
+	}
 	
 	public void suppress(){
 		suppressed = true;
@@ -31,9 +35,7 @@ public class StopAndDrop implements Behavior{
 		Motor.C.rotate(90, true);
 
 
-		while(!suppressed){
-		Thread.yield();//check for any other behaviors to over rule this one
-		}
+		
 	}
 	
 }
