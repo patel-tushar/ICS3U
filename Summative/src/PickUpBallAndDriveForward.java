@@ -20,14 +20,14 @@ public class PickUpBallAndDriveForward implements Behavior{
 	 * take control when screamed at
 	 */
 	public boolean takeControl(){
-		if(ss.readValue() > 30 || touch.isPressed()){//soft noise
+		if(/*ss.readValue() > 30 */touch.isPressed()){//soft noise
 			return true;
 		}
 		return false;
 	}
 	
 	public void action(){     
-		Motor.C.rotate(90, true);//close arm
+		Motor.C.rotate(-90, true);//close arm
 		
 		//drive forward
 		Motor.A.forward();
