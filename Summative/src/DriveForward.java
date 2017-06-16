@@ -5,13 +5,14 @@ import lejos.robotics.subsumption.Behavior;
 
 public class DriveForward implements Behavior{
 	private boolean suppressed = false;
+	private boolean debug = true;
 	
 	public void suppress(){
 		suppressed = true;
 	}
 	
 	public boolean takeControl(){
-			return true;
+				return true;
 	}
 	
 	public void action(){     

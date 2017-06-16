@@ -16,7 +16,7 @@ public class StopAndDrop implements Behavior{
 	}
 	
 	public boolean takeControl(){
-		if(noise.readValue() > 30){//if there is a single clap
+		if(noise.readValue() > 80){//loud noise
 			return true;
 		}
 		return false;
